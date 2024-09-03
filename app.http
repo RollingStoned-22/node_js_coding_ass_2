@@ -30,14 +30,14 @@ GET http://localhost:3000/user/followers/
 Authorization : bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImlhdCI6MTcyNTE4OTQyOH0.tfu_hoveGSIjTKWr2EqpTP7tt9nmZpip2yKS4oH458U
 
 
-GET http://localhost:3000/tweets/1/
+GET http://localhost:3000/tweets/2/
 Authorization : bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImlhdCI6MTcyNTE4OTQyOH0.tfu_hoveGSIjTKWr2EqpTP7tt9nmZpip2yKS4oH458U
 
 
 GET http://localhost:3000/tweets/1/likes/
 Authorization : bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImlhdCI6MTcyNTE4OTQyOH0.tfu_hoveGSIjTKWr2EqpTP7tt9nmZpip2yKS4oH458U
 
-GET http://localhost:3000/tweets/2/replies/
+GET http://localhost:3000/tweets/1/replies/
 Authorization : bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImlhdCI6MTcyNTE4OTQyOH0.tfu_hoveGSIjTKWr2EqpTP7tt9nmZpip2yKS4oH458U
 
 GET http://localhost:3000/user/tweets/

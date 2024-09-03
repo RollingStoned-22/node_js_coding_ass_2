@@ -156,7 +156,8 @@ app.get('/user/followers/', authenticateToken, async (request, response) => {
 
 app.get('/tweets/:tweetId/', authenticateToken, async (request, response) => {
   const {tweetId} = request.params
-  const {userId} = request
+  const {userId} = request.params
+  console.log(userId)
   const getTweetUserId = `
   select user_id
   from tweet
@@ -183,11 +184,15 @@ app.get('/tweets/:tweetId/', authenticateToken, async (request, response) => {
     response.send('Invalid Request')
   } else {
     const getTweetDetails = `
-    select 
+    select
     tweet.tweet,
-    COUNT(like.like_id) as likes,
-    COUNT(reply.reply_id) as replies,
-    tweet.date_time as dateTime
+    (SELECT COUNT(like.like_id) 
+     FROM like 
+     WHERE like.tweet_id = tweet.tweet_id) AS likes,
+    (SELECT COUNT(reply.reply_id) 
+     FROM reply 
+     WHERE reply.tweet_id = tweet.tweet_id) AS replies,
+    tweet.date_time AS dateTime
     from tweet
     join reply on tweet.tweet_id = reply.tweet_id
     join like on tweet.tweet_id = like.tweet_id
